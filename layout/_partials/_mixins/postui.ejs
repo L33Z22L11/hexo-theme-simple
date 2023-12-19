@@ -22,7 +22,7 @@
 					<div>
 						<div class="mb1 rounded text-xs">
 							<% post.categories.slice(0, 5).forEach( category => { %>
-							<a target="_self" class="inline-block mr3px mb2px whitespace-nowrap h5 leading-19px rounded" text="#b48faa" href="<%= url_for("categories/" + category.name) %>"><%- category.name %></a>
+							<a target="_self" class="inline-block mr3px mb2px whitespace-nowrap h5 leading-19px rounded" text="#99aabb" href="<%= url_for("categories/" + category.name) %>"><%- category.name %></a>
 							<% }) %>
 						</div>
 					</div>
@@ -31,12 +31,12 @@
 					<div>
 						<div class="mb1 rounded text-xs">
 							<% post.categories.forEach( category => { %>
-							<a target="_self" class="inline-block mr3px mb2px whitespace-nowrap h5 leading-19px rounded" text="#b48faa" href="<%= url_for("categories/" + category.name) %>"><%- category.name %></a>
+							<a target="_self" class="inline-block mr3px mb2px whitespace-nowrap h5 leading-19px rounded" text="#99aabb" href="<%= url_for("categories/" + category.name) %>"><%- category.name %></a>
 							<% }) %>
 						</div>
 					</div>
 					<% } } %>
-					<h2 class="text-lg mb11px overflow-hidden">
+					<h2 class="text-lg mb2 overflow-hidden">
 						<a target="_blank" href="<%= post_url %>"><%= post.title %></a>
 					</h2>
 					<% let excerpt = post.description || post.excerpt || post.content %>

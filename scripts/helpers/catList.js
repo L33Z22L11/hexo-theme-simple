@@ -39,7 +39,7 @@ hexo.extend.helper.register('catlist', function (types, limit) {
         for (let i = 0; i < limit; i++) {
             strTemp = `
             <li class="ml1 pl1">
-            <a class="h5 flex items-center leading-5 ml5px text-xs" href="/tags/${tagArr[i].name}/">#${tagArr[i].name}</a>
+            <a class="h5 flex items-center leading-5 ml5px text-xs" href="/tags/${tagArr[i].name}/">#&thinsp;${tagArr[i].name}</a>
             </li>`;
             strTagsBar += strTemp;
         }
