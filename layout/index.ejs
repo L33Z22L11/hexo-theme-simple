@@ -1,0 +1,29 @@
+<div class="flex-col items-center wfull max-wfull mc overflow-hidden">
+	<div class="w1080px mc max-wfull relative flex-x-between lg:flex-y-center">
+		<%- partial('_partials/_mixins/slide') %>
+	</div>
+</div>
+
+<div class="flex-y-center flex-col wfull max-wfull mc !my32px">
+	<div class="mc max-wfull wfull !mb5">
+		<div class="box-base rounded-5px relative">
+			<% if (theme.dynamic_category.enable && site.categories.length > 0) { %>
+			<div class="mb0 flex-center py10px px20px">
+				<div class="whitespace-nowrap flex overflow-x-auto overflow-y-hidden touch-pan-x mra no-scrollbar">
+					<%- catlist('category',theme.dynamic_category.limit) %>
+				</div>
+				<a class="min-w80px flex-center categories-base" href="/categories">
+					<i class="i-ri-arrow-right-double-fill mr-1 w24px h24px"></i>
+					更多
+				</a>
+			</div>
+			<% } %>
+		</div>
+	</div>
+	<div class="flex w1080px max-wfull mc p1px">
+		<div class="flex-col wh-full">
+			<%- partial('_partials/_mixins/postui') %>
+		</div>
+		<%- partial('_partials/aside') %>
+	</div>
+</div>

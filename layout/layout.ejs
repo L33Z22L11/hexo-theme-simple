@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="<%=config.language%>">
+<%- partial('_partials/head') %>
+
+
+<body>
+	<div class="flex-col">
+
+		<%- partial('_partials/header') %>
+
+		<main class="flex-col lt-lg:p10px w1080px mc">
+			<%- body %>
+		</main>
+
+		<footer>
+			<%- partial('_partials/footer') %>
+		</footer>
+	</div>
+	<%- partial('_partials/scripts') %>
+</body>
+
+</html>

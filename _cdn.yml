@@ -1,0 +1,41 @@
+# cdnjs 的 version 不能使用 latest
+
+simple_style:
+    name: hexo-theme-simple
+    file: css/style.css
+    local: true
+    npm: false
+    cdnjs: false
+simple_app:
+    name: hexo-theme-simple
+    file: source/js/app.js
+    local: true
+    npm: true
+    cdnjs: false
+simple_store:
+    name: hexo-theme-simple
+    file: source/js/utils/store.js
+    local: true
+    npm: true
+    cdnjs: false
+fontawesome:
+    name: '@fortawesome/fontawesome-free'
+    cdnjs_name: font-awesome
+    file: css/all.min.css
+    version: 6.4.2
+    npm: true
+    cdnjs: true
+swiper_js:
+    name: swiper
+    cdnjs_name: Swiper
+    file: swiper-bundle.min.js
+    version: 11.0.5
+    npm: true
+    cdnjs: true
+swiper_css:
+    name: swiper
+    cdnjs_name: Swiper
+    file: swiper-bundle.min.css
+    version: 11.0.5
+    npm: true
+    cdnjs: true

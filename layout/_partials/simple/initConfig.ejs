@@ -1,0 +1,10 @@
+<%- js(theme.cdn.simple_store) %>
+<script>
+	const SITE_CONFIG = {
+		authorTags: "<%= theme.author.tags %>",
+	};
+
+	document.addEventListener('DOMContentLoaded', () => {
+		useStore.set('SITE_CONFIG', SITE_CONFIG);
+	});
+</script>

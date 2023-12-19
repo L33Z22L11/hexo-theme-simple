@@ -1,0 +1,29 @@
+<%- css(theme.cdn.swiper_css)%>
+<%- js(theme.cdn.swiper_js)%>
+<script>
+	const updateProgressAndTime = (s, time, progress) => {
+		const progressCircle = document.querySelector('.autoplay-progress svg');
+		const progressContent = document.querySelector('.autoplay-progress span');
+
+		progressCircle.style.setProperty('--progress', 1 - progress);
+		progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+	};
+
+	const swiperConfig = {
+		spaceBetween: 30,
+		centeredSlides: true,
+		autoplay: {
+			delay: 6000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		on: {
+			autoplayTimeLeft: updateProgressAndTime,
+		},
+	};
+
+	const swiper = new Swiper('.swiper-simple', swiperConfig);
+</script>

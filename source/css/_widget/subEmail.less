@@ -1,0 +1,42 @@
+.sub-email {
+    width: 100%;
+    height: 180px;
+    padding: 24px;
+    cursor: pointer;
+    color: @simple_card_text;
+
+    input[type="email"] {
+        max-width: 187px;
+        height: 36px;
+        border: 1px solid #eee;
+        border-radius: 5px 0 0 5px;
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        border-right: 0;
+        color: #333;
+        fill: #333;
+        background: @simple_body;
+        transition: border .3s ease-in-out;
+
+        &:focus,
+        &:hover {
+            border-color: @simple_blue;
+        }
+    }
+
+    input[type="submit"] {
+        max-width: 60px;
+        height: 36px;
+        border-left: 1px;
+        border: 0 solid @simple_blue;
+        border-radius: 0 5px 5px 0;
+        margin: 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        background: @simple_blue;
+        color: #fff;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,34 @@
+<div class="about-box">
+	<div class="about-box-card box-base">
+		<div class="about-box-card-top">
+			<% if(theme.author.tags) { %>
+			<div class="about-box-card-top-tag" onclick="simple.changeAboutCardText()">
+				<span class="p4px select-none flex-center text-overflow" text="sm white"><%= theme.author.tags[0] || '💻 前端Bug构造师' %></span>
+			</div>
+			<% } %>
+		</div>
+		<div class="about-box-card-center">
+			<div class="about-box-card-center-avatar">
+				<div class="w120px h120px relative mc">
+					<a class="flex-y-center absolute-lt wh-full text-overflow" href="<%= theme.author.website %>"></a>
+					<picture>
+						<source type="image/webp" data-srcset="<%= url_for(theme.author.avatar) %>" srcset="<%= url_for(theme.author.avatar) %>">
+						<img avatar border="4px white rounded-full" src="<%= url_for(theme.author.avatar) %>" alt="关于我">
+					</picture>
+				</div>
+			</div>
+			<div class="about-box-card-center-content">
+				<%- theme.author.description %>
+			</div>
+		</div>
+		<div class="about-box-card-bottom">
+			<span class="font-600 flex-col" text="xl white">
+				<span><%= theme.author.name %></span>
+				<span class="font-400" text="xs white"><%= theme.author.intro %></span>
+			</span>
+			<div class="about-box-card-bottom-social">
+				<%- partial('_partials/_widget/social', { limit:2 }) %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<% if (theme.widgets.email_subscribe.enable){ %>
+<div class="sub-email box-base">
+	<h6 class="mb3" text="lg font-500"><%= theme.widgets.email_subscribe.title %></h6>
+	<p class="text-sm mb3 op90"><%= theme.widgets.email_subscribe.description %></p>
+	<form action="" method="post" target="_blank" novalidate="">
+		<div class="flex-y-center">
+			<input type="email" value="" name="email" placeholder="<%= theme.widgets.email_subscribe.placeholder %>" required="">
+			<input type="submit" value="<%= theme.widgets.email_subscribe.button_text %>" name="subscribe">
+		</div>
+	</form>
+</div>
+<% } %>

@@ -1,0 +1,71 @@
+<% if(theme.slide.enable){ %>
+<div class="swiper-simple box-base !lt-lg:w-full <%= theme.slide_aside.enable ? '' : '!wfull !h450px' %>">
+	<div class="swiper-wrapper">
+		<% for(let i=0;i<theme.slide.title.length;i++){ %>
+		<div class="swiper-slide flex-center" text="lg center">
+			<a class="absolute-lt wh-full" href="<%= theme.slide.link[i] %>"></a>
+			<img class="rounded-md block wh-full object-cover" src="<%= theme.slide.image[i] %>" alt="<%= theme.slide.title[i] %>">
+			<div class="flex-col ml4 absolute bottom-0 z10">
+				<h2 class="relative left-0 bottom-6 z2 hover:cursor-pointer my10px" text="2xl white overflow"><%= theme.slide.title[i] %></h2>
+				<div class="flex-y-center relative left-0 bottom-5 z2" text="sm white">
+					<a class="absolute-lt wh-full z2" href="<%= theme.author.website %>"></a>
+					<picture class="picture">
+						<source type="image/webp" data-srcset="<%= url_for(theme.author.avatar) %>" srcset="<%= url_for(theme.author.avatar) %>">
+						<img avatar src="<%= url_for(theme.author.avatar) %>">
+					</picture>
+					<span class="ml2 text-xs">
+						<a href="<%= theme.author.website %>"><%= theme.author.name %></a>
+					</span>
+					<span class="ml2 text-xs" datetime="<%= full_date(page.date, 'YYYY-MM-DD') %>">
+						<%= full_date(page.date,'YYYY-MM-DD') %>
+					</span>
+				</div>
+			</div>
+		</div>
+		<% } %>
+	</div>
+	<div class="swiper-pagination"></div>
+	<% if(theme.slide.countdown && theme.slide.title.length > 1 && theme.slide.link.length > 1 && theme.slide.image.length > 1){ %>
+	<div class="autoplay-progress">
+		<svg viewBox="0 0 48 48">
+			<circle cx="24" cy="24" r="20"></circle>
+		</svg>
+		<span></span>
+	</div>
+	<% } %>
+</div>
+<% if(theme.slide_aside.enable) { %>
+<div class="w350px h376px max-wfull flex-col flex-x-between lt-lg:hidden">
+	<% if(theme.slide_aside && theme.slide_aside.title.length > 1 && theme.slide_aside.title.length <= 2 && theme.slide_aside.link.length > 1 && theme.slide_aside.link.length <= 2 && theme.slide_aside.image.length > 1 && theme.slide_aside.image.length <= 2){ %>
+	<% for (let i = 0; i < 2; i++) { %>
+	<div class="relative box-base flex-center">
+		<div class="h0 pt50% relative wfull">
+			<div class="absolute wh-full text-center overflow-hidden box-base z1 top-0 flex-center">
+				<a class="absolute-lt wh-full z2" href="<%= theme.slide_aside.link[i] %>"></a>
+				<picture class="picture">
+					<source type="image/webp" data-srcset="<%= theme.slide_aside.image[i] %>" srcset="<%= theme.slide_aside.image[i] %>">
+					<img class="op100 transition-opacity duration-400" src="<%= theme.slide_aside.image[i] %>">
+				</picture>
+				<div class="flex-col flex-x-between ml4 absolute-lb z10">
+					<h2 class="relative left-0 bottom-1 z2 hover:cursor-pointer my10px" text="lg left white overflow"><%= theme.slide_aside.title[i] %></h2>
+					<div flex-y-center relative left-0 bottom-2 z-2 text="sm white">
+						<a class="absolute-lt wh-full z2 left-4" href="<%= theme.author.website %>"></a>
+						<picture class="picture">
+							<source type="image/webp" data-srcset="<%= url_for(theme.author.avatar) %>" srcset="<%= url_for(theme.author.avatar) %>">
+							<img class="op100 transition-opacity duration-400 w5 h5 rounded-full block" src="<%= url_for(theme.author.avatar) %>">
+						</picture>
+						<span class="ml2 text-xs">
+							<a href="<%= theme.author.website %>"><%= theme.author.name %></a>
+						</span>
+						<span class="ml2 text-xs" datetime="<%= full_date(page.date, 'YYYY-MM-DD') %>">
+							<%= full_date(page.date,'YYYY-MM-DD') %>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% } }%>
+</div>
+<%- partial('../../_plugins/swiper/script') %>
+<% } } %>

@@ -1,0 +1,52 @@
+<nav class="nav-wh mb4">
+	<div class="nav-base fixed z10">
+		<div class="nav-base z6 relative">
+			<div class="w1080px hfull relative max-wfull mc flex-center justify-between text-sm">
+				<div class="flex-y-center leading-1 duration-200 delay-75 lt-lg:w-full">
+					<div class="mr8 py15px duration-100 delay-75">
+						<div class="flex-y-center h9">
+							<h1>
+								<a class="mc flex lt-xl:ml-5" text="2xl inherit overflow" href="<%= url_for() %>">
+									<%= theme.title || config.title %>
+								</a>
+							</h1>
+						</div>
+					</div>
+					<div class="lt-md:hidden">
+						<ul class="h16 flex-y-center text-overflow">
+							<% for (const key in theme.menu) { %>
+							<% const item = theme.menu[key]; %>
+							<% if (typeof item === 'string') { %>
+							<li class="menu-items mr6 hfull flex-y-center">
+								<a text="base" href="<%= url_for(item) %>" target="_self"><%= key %></a>
+							</li>
+							<% } else if (Array.isArray(item)) { %>
+							<li class="menu-items mr6 hfull flex-y-center">
+								<a class="text-base" href="#" target="_self"><%= key %></a>
+								<i class="m1 i-mdi-chevron-down"></i>
+								<ul class="menu-items-child bg-white dark:bg-black">
+									<% item.forEach(subItem => { %>
+									<% for (const subKey in subItem) { %>
+									<li class="relative list-none wh-full">
+										<a href="<%= url_for(subItem[subKey]) %>" target="_self"><%= subKey %></a>
+									</li>
+									<% } %>
+									<% }); %>
+								</ul>
+							</li>
+							<% } %>
+							<% } %>
+						</ul>
+					</div>
+				</div>
+				<button class="search-btn">
+					<i class="search-btn-icon i-ion-search"></i>
+					<div class="search-btn-content text-overflow">搜索
+						<span>⌘</span>
+						<span>K</span>
+					</div>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>

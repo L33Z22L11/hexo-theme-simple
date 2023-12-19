@@ -1,0 +1,31 @@
+<% 
+const keys = Object.keys(theme.author.social);
+keys.slice(0, limit).forEach((key) => {
+    const value = theme.author.social[key];
+    if (typeof value === 'string' && value.includes('||')) {
+        const [urlPart, iconPart] = value.split('||').map(part => part.trim());
+        const icon = iconPart || 'i-mdi-chat-plus';
+        let url;
+
+        switch (key) {
+            case 'github':
+                url = 'https://github.com/' + urlPart;
+                break;
+            case 'qq':
+                url = 'https://wpa.qq.com/msgrd?v=3&uin=' + urlPart + '&site=qq&menu=yes';
+                break;
+            case 'bilibili':
+                url = 'https://space.bilibili.com/' + urlPart;
+                break;
+            default:
+                url = urlPart;
+                break;
+        }
+%>
+<a class="social-btn" href="<%= url_for(url) %>" target="_blank" data-name="<%= key %>">
+	<i class="<%= icon %>"></i>
+</a>
+<% 
+    }
+}); 
+%>

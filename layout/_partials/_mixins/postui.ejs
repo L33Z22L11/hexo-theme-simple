@@ -1,0 +1,75 @@
+<% page.posts.each( (post) => { %>
+<div class="post box-base">
+	<ul class="p0 m0 flex">
+		<li class="wfull box-border">
+			<div class="rounded-8px m0 overflow-hidden flex relative p4 items-stretch">
+				<% let post_url = url_for(post.path), index_img = post.index_img || theme.post.default_index_img %>
+				<% if (index_img) { %>
+				<div class="min-w190px ha mr4 relative overflow-hidden">
+					<div class="wh-full overflow-hidden relative rounded">
+						<a class="flex-center absolute-lt wh-full" target="_blank" href="<%= post_url %>">
+							<picture class="picture">
+								<source type="image/webp" data-srcset="<%= url_for(index_img) %>" srcset="<%= url_for(index_img) %>">
+								<img post-index-img src="<%= url_for(index_img) %>" alt="<%= post.title %>">
+							</picture>
+						</a>
+					</div>
+				</div>
+				<% } %>
+				<div class="w90% flex-col py4px px0">
+					<% if (post.categories.length > 0) { %>
+					<% if (post.categories.length >= 5) {%>
+					<div>
+						<div class="mb1 rounded text-xs">
+							<% post.categories.slice(0, 5).forEach( category => { %>
+							<a target="_self" class="inline-block mr3px mb2px whitespace-nowrap h5 leading-19px rounded" text="#b48faa" href="<%= url_for("categories/" + category.name) %>"><%- category.name %></a>
+							<% }) %>
+						</div>
+					</div>
+					<% } else { %>
+
+					<div>
+						<div class="mb1 rounded text-xs">
+							<% post.categories.forEach( category => { %>
+							<a target="_self" class="inline-block mr3px mb2px whitespace-nowrap h5 leading-19px rounded" text="#b48faa" href="<%= url_for("categories/" + category.name) %>"><%- category.name %></a>
+							<% }) %>
+						</div>
+					</div>
+					<% } } %>
+					<h2 class="text-lg mb11px overflow-hidden">
+						<a target="_blank" href="<%= post_url %>"><%= post.title %></a>
+					</h2>
+					<% let excerpt = post.description || post.excerpt || post.content %>
+					<div class="mb3 line-clamp-2 overflow-hidden break-all" text="sm [#797C80]">
+						<%- strip_html(excerpt).substring(0, 200).trim().replace(/\n/g, ' ') %>
+					</div>
+					<div class="m0 mta flex-x-between flex-y-center">
+						<ul class="wfull flex-center justify-end" text="xs #bcbcbc">
+							<li class="flex-1 p0">
+								<a class="flex-y-center text-overflow" href="<%= theme.author.website %>">
+									<picture class="picture">
+										<source type="image/webp" data-srcset="<%= url_for(theme.author.avatar) %>" srcset="<%= url_for(theme.author.avatar) %>">
+										<img class="!w20px !h20px mr5px" avatar src="<%= url_for(theme.author.avatar) %>">
+									</picture>
+									<span class="ml0 h5 inline-block leading-5 text-xs"><%= theme.author.name %></span>
+								</a>
+							</li>
+							<li class="ml1 pl1">
+								<span class="h5 inline-block leading-5 ml3 text-xs">
+									<time class="text-overflow" datetime="<%= full_date(post.date, 'YYYY-MM-DD HH:mm') %>"><%- date(post.date, config.date_format) %></time>
+								</span>
+							</li>
+							<% if (post.tags.length > 0) { %>
+							<% if (post.tags.length >= 4) {%>
+							<%- catlist('tag', 4) %>
+							<% } else { %>
+							<%- catlist('tag', post.tags.length) %>
+							<% } } %>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<% }) %>

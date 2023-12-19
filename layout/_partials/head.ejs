@@ -1,0 +1,34 @@
+<% 
+let title = ""
+if (page.title) { 
+	title = page.title + ' · ' + theme.title || config.title 
+} else {
+	title = config.title || theme.title 
+} 
+let keywords = page.keywords || (config.keywords|| theme.keywords)
+if (keywords instanceof Array) {
+	keywords = keywords.join(',')
+}
+let description = page.description || page.excerpt || (is_post() && page.content) || config.description
+if (description) {
+	description = strip_html(description).substring(0, 200).trim().replace(/\n/g, ' ')
+}
+%>
+
+<head theme="hexo-theme-simple">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<% if (theme.force_https) { %>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<% } %>
+	<meta name="author" content="<%= page.author || config.author %>">
+	<meta name="keywords" content="<%= keywords %>">
+	<meta name="description" content="<%= description %>">
+	<title><%- title %></title>
+	<link rel="icon" href="<%- url_for(theme.favicon) %>">
+	<link rel="stylesheet" href="<%- theme.cdn.simple_style %>">
+	<% if (theme.plugins.fontawesome) { %>
+	<%- css(theme.cdn.fontawesome) %>
+	<% } %>
+</head>

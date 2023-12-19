@@ -1,0 +1,245 @@
+---
+#---------------------------
+# Hexo Theme Simple
+# Author: isYangs
+# Github:
+#
+# 配置指南:
+# 你可以从指南中获得更详细的说明
+#
+# Guide:
+# You can get more detailed help from the guide
+#---------------------------
+
+# 站点标题
+# Tip: 根目录下的 _config.yml 中设置后，此处不再生效
+title: Simple 主题演示
+
+# 站点副标题
+# Tip: 根目录下的 _config.yml 中设置后，此处不再生效
+subtitle: 'A simple theme for Hexo'
+
+# 站点关键词
+# Tip: 根目录下的 _config.yml 中设置后，此处不再生效
+keywords: 'hexo,theme,simple'
+
+# 用于浏览器标签的图标
+favicon: /favicon.ico
+
+# 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
+force_https: false # true | false
+
+# 网站作者信息
+author:
+    # 作者名称
+    name: isYangs
+
+    # 作者头像，可以是相对路径或外站的绝对路径
+    avatar: https://a.xuewuzhibu.cn/8/655c9835780a0-8.jpg
+
+    # 作者简介
+    intro: '一个很懒的前端Bug构造师'
+
+    # 作者描述
+    description: <div>在这里有关于我对<b> 前端开发 UI设计 </b>的一些问题和不同的看法。<br><br>希望你能从这里的文章获得一些帮助，如果能帮助到你我很荣幸！</div>
+
+    # 作者网址
+    link: /about # 站内地址 /about | 网址
+
+    # 作者标签
+    tags:
+        - 💻 前端Bug构造师
+        - 🤖️ 数码科技爱好者
+        - 👨‍💻‍ 重度熬夜写代码
+        - 🔍 分享与热心帮助
+        - i-logos-hexo || Simple 主题作者
+
+    # 作者社交信息
+    social:
+        github: isyangs || i-mdi-github
+        bilibili: 405322353 || i-ri-bilibili-fill
+        qq: 750837279 || i-mdi-qqchat
+
+# 主菜单导航
+menu:
+    首页: /
+    归档: /archives
+    标签: /tags
+    分类: /categories
+    友链: /links
+    关于: /about
+    二级导航:
+        - 二级导航1: /test1
+        - 二级导航2: /test2
+        - 二级导航3: /test3
+
+# 搜索功能
+# Tip: 基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
+search:
+    # 搜索索引文件的路径，可以是相对路径或外站的绝对路径
+    path: /local-search.xml
+
+    # 文件生成在本地的位置，必须是相对路径
+    generate_path: /local-search.xml
+
+    # 搜索的范围
+    field: post # post | page | all
+
+    # 搜索是否扫描正文
+    content: true # true | false
+
+# 首页轮播图，若不需要请设置为 false
+slide:
+    # 是否开启轮播
+    enable: true # true | false
+
+    # 是否开启轮播图倒计时
+    countdown: true # true | false
+
+    # 轮播图的标题
+    title:
+        # - 'Simple 主题演示'
+        - 'Simple 主题文档'
+        - 'Simple 主题安装'
+
+    # 轮播图的链接
+    link:
+        # - '/'
+        - '/'
+        - '/'
+    # 轮播图的图片
+    image:
+        # - https://a.xuewuzhibu.cn/8/655ccc43de410-8.jpg
+        - https://a.xuewuzhibu.cn/8/655cccae25d4f-8.jpg
+        - https://a.xuewuzhibu.cn/8/655ccc54a4729-8.png
+
+# 轮播旁两栏内容
+slide_aside:
+    # 是否开启
+    enable: true # true | false
+
+    # 标题 最多为两个
+    title:
+        - 'Simple 主题'
+        - 'Simple 主题文档'
+
+    # 链接 最多为两个
+    link:
+        - '/'
+        - '/'
+
+    # 图片 最多为两个
+    image:
+        - https://a.xuewuzhibu.cn/8/655ccc54a4729-8.png
+        - https://a.xuewuzhibu.cn/8/655cccae25d4f-8.jpg
+
+# 首页动态分类条
+dynamic_category:
+    # 是否开启动态分类条
+    enable: true # true | false
+
+    # 动态分类条显示分类数量 (0 表示显示所有分类)
+    limit: 0
+
+# 文章页
+post:
+    # 文章页面的默认封面图
+    # Tip: 当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
+    banner_img: /img/default.png
+    # 默认封面图的高度，单位为 px
+    banner_img_height: 70
+
+    # 文章在首页的默认封面图
+    # Tip: 当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
+    default_index_img: https://a.xuewuzhibu.cn/8/655ccc54a4729-8.png
+
+    # 文章标题下方的元信息
+    meta:
+
+    # 字数统计
+    wordcount:
+        enable: true
+
+    # 估计阅读全文需要的时长
+    min2read:
+        enable: true
+        # 每个字词的长度，建议：中文 ≈ 2，英文 ≈ 5，中英混合可自行调节
+        awl: 2
+        # 每分钟阅读字数，如果大部分是技术文章可适度调低
+        wpm: 60
+
+    # 浏览量计数
+    views:
+        enable: false
+        # 统计数据来源
+        # Options: busuanzi | leancloud
+        source: 'busuanzi'
+
+
+# 小工具
+widgets:
+    # 邮箱订阅，显示在首页侧边栏
+    email_subscribe:
+        enable: true
+        # 邮箱订阅卡片的标题
+        title: '热门资讯技术干货'
+
+        # 邮箱订阅卡片的描述
+        description: '输入邮箱点击订阅按钮，即可快人一步获取最新资讯、技术干货、软件资源等'
+
+        # 邮箱订阅卡片的按钮文字
+        button_text: '订阅'
+
+        # 邮箱订阅卡片的按钮链接
+        button_link: '/'
+
+        # 邮箱订阅卡片输入框的提示文字
+        placeholder: '请输入你的邮箱'
+
+# CDN 参考自 Volantis 主题，即配置方法一样
+cdn_system:
+    # CDN 优先级 从高到低排序 写入 priority 列表即表示启用(enable)
+    priority: [custom, local, cdnjs, npm]
+    # ========================================================================
+    # cdn数据配置文件见 "theme/_cdn.yml"
+    # 变量说明：
+    # 以下变量只能在 `prefix` 中使用。
+    # ${site_root}                站点根目录 一般是 "/"
+    # 以下变量只能在 `format` 中使用。
+    # ${prefix}                   CDN 链接前缀
+    # ${name}                     package 名称 见 "theme/_cdn.yml"
+    # ${version}                  package 版本 见 "theme/_cdn.yml"
+    # ${file}                     文件路径 见 "theme/_cdn.yml"
+    # ${min_file}                 文件路径 ${file} 后添加 .min. (jsdelivr、cdnjs 官方自带压缩)
+    # ${timestamp}                Hexo运行时的时间戳(eg：1661246702300), 可用于静态资源版本控制 format: ${prefix}${file}?v=${timestamp}
+    system_config:
+        # 自定义配置 使用 "theme/_cdn.yml" 中的名称作为配置项的键
+        custom:
+            #simple_style: /css/index.css
+            #simple_app: /js/app.js
+
+        # 主题 /js与/css目录 （一般放在本地，可以在此处配置站点CDN）,"theme/_cdn.yml" 中以 "simple_" 开头的名称
+        # Tip: 在本配置文件中 匹配以 "simple-local" 开头的链接路径替换为该格式的前缀开头 prefix
+        local:
+            # CDN 链接前缀
+            prefix: ${site_root}
+            # local CDN 格式
+            format: ${prefix}${file}
+
+        # npm
+        # https://www.npmjs.com/
+        # Tip: 在本配置文件中 匹配以 "simple-npm" 开头的链接路径替换为该格式的前缀开头 prefix
+        npm:
+            prefix: https://unpkg.com
+            format: ${prefix}/${name}@${version}/${file}
+
+        # cdnjs
+        # https://cdnjs.com/
+        # Tip: 在本配置文件中 匹配以 "simple-cdnjs" 开头的链接路径替换为该格式的前缀开头 prefix
+        cdnjs:
+            prefix: https://cdn.bootcdn.net/ajax/libs
+            format: ${prefix}/${name}/${version}/${min_file}
+
+plugins:
+    # fontawesome
+    fontawesome: true # true | false

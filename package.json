@@ -1,0 +1,30 @@
+{
+  "name": "hexo-theme-simple",
+  "version": "1.0.0",
+  "description": "A simple theme for Hexo",
+  "main": "package.json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isYangs-hexo-theme-simple.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "simple"
+  ],
+  "author": "isYangs (https://github.com/isYangs)",
+  "bugs": {
+    "url": "https://github.com/isYangs/hexo-theme-simple/issues"
+  },
+  "license": "GPL-V3",
+  "scripts": {
+    "dev": "unocss -w",
+    "build": "unocss"
+  },
+  "dependencies": {
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "unocss": "^0.57.7"
+  }
+}
